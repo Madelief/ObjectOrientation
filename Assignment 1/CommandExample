@@ -1,0 +1,36 @@
+package nl.ru.ai.marc;
+
+import java.util.Scanner;
+
+public class CommandExample {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		boolean ready = false;
+		while (!ready)
+
+		{
+			System.out.print("> ");
+			String command = scanner.next();
+			switch (command) {
+			case "hi":
+				performHi(scanner);
+				break;
+			case "stop":
+				ready = true;
+				System.out.println("See ya next time!");
+				break;
+			default:
+				System.out.println("huh?!");
+			}
+			scanner.nextLine();
+		}
+	}
+
+	private static void performHi(Scanner scanner) {
+		String name = scanner.next();
+		System.out.println("Hello " + name);
+
+	}
+
+}
